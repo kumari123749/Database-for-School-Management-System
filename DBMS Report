@@ -1,0 +1,280 @@
+
+SQL> create table courses(
+  2  Course_ID number(25),
+  3  Course_names varchar(25),
+  4  Staff_ID number(25),
+  5  Student_ID number(25),
+  6  CONSTRAINT courses_pk PRIMARY KEY(Course_ID,Staff_ID,Student_ID));
+
+Table created.
+
+
+SQL> select * from courses;
+
+ COURSE_ID COURSE_NAMES                STAFF_ID STUDENT_ID
+---------- ------------------------- ---------- ----------
+       201 Python                           111          1
+       202 AI                               222          1
+       203 ML                               333          2
+       204 R-prog                           444          3
+       205 DBMS                             555          4
+       206 BESM                             666          5
+       207 BusiEnvi                         777          6
+       208 WebDevelopment                   888          7
+       209 Cloudcomputing                   999          8
+       210 Datascience                     1211          9
+       211 Statistics                      1311         10
+
+ COURSE_ID COURSE_NAMES                STAFF_ID STUDENT_ID
+---------- ------------------------- ---------- ----------
+       212 Matlab                          1411         11
+       213 FinancialManagement             1511         12
+       214 C prog                          1611         13
+       215 java                            1711         14
+       216 Data structures                 1811         15
+       217 Financial Derivatives           1911         16
+       218 Mergers                         2011         17
+       219 Neural Networks                 2111         18
+       222 AWS                             2121         19
+
+20 rows selected.
+
+SQL> create table students(
+  2  Gender varchar(25),
+  3  first_name varchar(25),
+  4  last_name varchar(25),
+  5  Student_ID number(25),
+  6  Aadhar_no number(25),
+  7  birth_date DATE,
+  8  Age number(25),
+  9  Religion varchar(25),
+ 10  CONSTRAINT students_pk PRIMARY KEY(Student_ID,Aadhar_no));
+
+Table created.
+
+SQL> select * from students;
+
+GENDER                    FIRST_NAME                LAST_NAME
+------------------------- ------------------------- -------------------------
+STUDENT_ID  AADHAR_NO BIRTH_DAT        AGE RELIGION
+---------- ---------- --------- ---------- -------------------------
+F                         Gunuru                    Kumari
+         1 2.2961E+11 21-APR-99         20 Hindu
+
+M                         Gunuru                    Naveen
+         2 2.6861E+11 20-JAN-99         19 Hindu
+
+F                         Namballa                  keerthi
+         3 6.9547E+11 18-MAY-90         21 Muslim
+
+
+GENDER                    FIRST_NAME                LAST_NAME
+------------------------- ------------------------- -------------------------
+STUDENT_ID  AADHAR_NO BIRTH_DAT        AGE RELIGION
+---------- ---------- --------- ---------- -------------------------
+M                         kagitala                  Srinu
+         4 6.5826E+11 11-MAR-95         26 Hindu
+
+F                         seepana                   Tanmayi
+         5 5.8713E+11 13-JUN-01          4 Christian
+
+M                         korlam                    karthik
+         6 2.5796E+11 16-NOV-00         20 Hindu
+
+
+GENDER                    FIRST_NAME                LAST_NAME
+------------------------- ------------------------- -------------------------
+STUDENT_ID  AADHAR_NO BIRTH_DAT        AGE RELIGION
+---------- ---------- --------- ---------- -------------------------
+M                         Bora                      Akhil
+         7 2.5578E+11 16-JAN-00         20 Hindu
+
+F                         Gulipilli                 Deepika
+         8 4.5876E+11 18-DEC-97         22 Hindu
+
+F                         Bathina                   Abhigna
+         9 4.5875E+11 21-JUN-92         25 Muslim
+
+
+GENDER                    FIRST_NAME                LAST_NAME
+------------------------- ------------------------- -------------------------
+STUDENT_ID  AADHAR_NO BIRTH_DAT        AGE RELIGION
+---------- ---------- --------- ---------- -------------------------
+F                         Pusarla                   Pratyusha
+        10 2.5976E+11 14-FEB-92         27 Islam
+
+M                         Jitu                      Kunal
+        11 4.5829E+11 28-AUG-93         25 sikhism
+
+M                         Potunuru                  Sagar
+        12 2.5649E+12 22-OCT-92         27 Buddhisim
+
+
+GENDER                    FIRST_NAME                LAST_NAME
+------------------------- ------------------------- -------------------------
+STUDENT_ID  AADHAR_NO BIRTH_DAT        AGE RELIGION
+---------- ---------- --------- ---------- -------------------------
+F                         Yedla                     sai
+        13 3.5829E+11 15-FEB-92         26 Christian
+
+M                         Allu                      Nandu
+        14 6.7833E+11 26-MAR-91         24 Hindu
+
+M                         Deepesh                   Kumar
+        15 2.6829E+11 11-MAY-92         24 sikhism
+
+
+GENDER                    FIRST_NAME                LAST_NAME
+------------------------- ------------------------- -------------------------
+STUDENT_ID  AADHAR_NO BIRTH_DAT        AGE RELIGION
+---------- ---------- --------- ---------- -------------------------
+M                         Roshan                    Kumar
+        16 4.3769E+11 21-MAY-95         26 Buddhisim
+
+F                         pooja                     Shree
+        17 2.6568E+11 11-JUN-92         22 Christian
+
+M                         Ratan                     Yadav
+        18 2.6829E+11 18-JUL-95         28 Buddhisim
+
+
+GENDER                    FIRST_NAME                LAST_NAME
+------------------------- ------------------------- -------------------------
+STUDENT_ID  AADHAR_NO BIRTH_DAT        AGE RELIGION
+---------- ---------- --------- ---------- -------------------------
+M                         Sourabh                   Kumar
+        19 2.6829E+11 27-OCT-96         24 sikhism
+
+
+19 rows selected.
+
+SQL> insert into students values('F','Tanu','Shree',20,268289865676,'27/Jan/1991
+',28,'sikhism');
+
+1 row created.
+
+
+SQL> DESC students;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+
+ GENDER                                             VARCHAR2(25)
+ FIRST_NAME                                         VARCHAR2(25)
+ LAST_NAME                                          VARCHAR2(25)
+ STUDENT_ID                                NOT NULL NUMBER(25)
+ AADHAR_NO                                 NOT NULL NUMBER(25)
+ BIRTH_DATE                                         DATE
+ AGE                                                NUMBER(25)
+ RELIGION                                           VARCHAR2(25)
+
+
+
+SQL> create table Department(
+  2  Department_ID number(25),
+  3  Department_name varchar(25));
+
+Table created.
+
+SQL> select * from Department;
+
+DEPARTMENT_ID DEPARTMENT_NAME
+------------- -------------------------
+          100 Engineering
+          101 Science
+          102 Management
+          103 Pharmacy
+          104 Architeture
+          105 Law
+          106 Medical
+          107 Nursing
+          108 Psychology
+          109 World Languages
+          110 Mathematics
+
+DEPARTMENT_ID DEPARTMENT_NAME
+------------- -------------------------
+          111 Food and Nutrition
+          112 Health Services
+          113 Geology
+          114 Physics
+          115 Chemistry
+          116 Ecnomics
+          117 Accounting
+          118 Sociology
+          119 Arts
+
+20 rows selected.
+
+
+SQL> SELECT * FROM SCHOOL;
+
+  STAFF_ID STAFF_NAME                STAFF_ROLE
+---------- ------------------------- -------------------------
+       111 karan                     prof
+       222 neelam                    asst.prof
+       333 josh                      Associate.prof
+       444 priya                     Associate.prof
+       555 vishnu                    prof
+       666 Nagalakshmi               principal
+       777 Yasodha                   Asst.principal
+       888 Yamini                    JR.proff
+       999 Leela                     SR.proff
+      1211 Maya                      JR.Asstproff
+      1211 Maya                      SR.Asstproff
+
+  STAFF_ID STAFF_NAME                STAFF_ROLE
+---------- ------------------------- -------------------------
+      1311 jony                      Receptionist
+      1411 rick                      system tester
+      1511 rick                      chemical tester
+      1711 rocky                     peon
+      1811 fatima                    Teacher
+      1911 Leben                     Coordinator
+      2011 Divakar                   Asst.Coordinator
+      2111 rupa                      HOD
+      2121 keerti                    lecturer
+
+20 rows selected.
+
+
+SQL> create table parents(
+  2  father_name varchar(25),
+  3  mother_name varchar(25),
+  4  mobile_no number(25),
+  5  Student_ID NOT NULL,
+  6  FOREIGN KEY(Student_ID) REFERENCES students(Student_ID));
+
+Table created.
+
+SQL> select * from parents;
+
+FATHER_NAME               MOTHER_NAME                MOBILE_NO STUDENT_ID
+------------------------- ------------------------- ---------- ----------
+Naidu                     Parvathi                  9457832879          1
+Raju                      Sandhya                   9457837679          2
+Srinu                     Padmavathi                8765832879          3
+Nandu                     Deepika                   7654832879          4
+Kiran Kumar               Harika                    9986432879          5
+Mohan                     Lakshmi                   8884832879          6
+Vishwa                    Poorna                    7547567439          7
+Suresh                    Nalini                    8767835679          8
+Sagar                     Divya                     7654832876          9
+Karthik                   Hamsikha                  6785839876         10
+Kishore                   Teja                      7254832986         11
+
+FATHER_NAME               MOTHER_NAME                MOBILE_NO STUDENT_ID
+------------------------- ------------------------- ---------- ----------
+Mahesh                    namrutha                  8975832897         12
+Rajesh                    Priya                     8436832444         13
+Ram                       Sindhu                    6787833456         14
+Varun                     Bhanu                     7123832665         15
+Sharath                   Ramya                     6678835876         16
+karan Pratap              Tejaswi                   8765832886         17
+Rajesh                    Raashi                    6123832446         18
+Pradeep                   Amrutha                   8898832557         19
+Surendra                  Varsha                    7789832223         20
+
+20 rows selected.; 
+
+
+
